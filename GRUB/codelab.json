@@ -1,0 +1,28 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2023-10-25T00:02:40+02:00",
+  "id": "GRUB",
+  "duration": 6,
+  "title": "Proyecto 1: Bastionado del arranque del sistema",
+  "summary": "En este codelab quedan expuestos diferentes mecanismos de protección de BIOS/UEFI.",
+  "source": "LINUX.md",
+  "theme": "",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "codelab",
+    "markdown",
+    "grub",
+    "cybersecurity"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/CarlosMontesino02/P1BRS-Bastionado-del-arranque-del-sistema",
+  "ga": "ID de Google Analytics",
+  "url": "GRUB"
+}
