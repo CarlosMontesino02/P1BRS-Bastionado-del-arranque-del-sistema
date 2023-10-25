@@ -1,0 +1,97 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>Proyecto 1: Bastionado del arranque del sistema</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/claat-public/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid="ID de Google Analytics"
+                  id="BIOS/UEFI"
+                  title="Proyecto 1: Bastionado del arranque del sistema"
+                  environment="web"
+                  feedback-link="https://github.com/CarlosMontesino02/P1BRS-Bastionado-del-arranque-del-sistema">
+    
+      <google-codelab-step label="Introducción" duration="3">
+        <h2 is-upgraded>¿Qué es BIOS/UEFI?</h2>
+<p>La BIOS (Basic Input/Output System) y su sucesora, UEFI (Unified Extensible Firmware Interface), son componentes fundamentales de cualquier computadora, encargadas de iniciar el hardware y el sistema operativo. Su importancia radica en que actúan como el puente entre el hardware y el software, lo que las convierte en un objetivo crítico para la seguridad informática. Este proyecto se enfocará en explorar qué son la BIOS y UEFI, así como la creciente relevancia de asegurar su integridad y protegerlas de amenazas cibernéticas, dado que cualquier vulnerabilidad en estas interfaces podría tener graves consecuencias para la seguridad de todo el sistema.</p>
+<h2 is-upgraded>¿Cómo podemos protegemos BIOS/UEFI?</h2>
+<p>Entre las principales medidas de protección:</p>
+<ul>
+<li>Contraseñas y bloqueo de arranque: Establecer contraseñas de BIOS/UEFI y bloquear la secuencia de arranque para evitar el acceso no autorizado.</li>
+<li>Actualizaciones regulares: Mantener la BIOS/UEFI actualizada con las últimas versiones de firmware que corrigen vulnerabilidades conocidas.</li>
+<li>Firmas digitales: Utilizar firmas digitales para verificar la autenticidad de las actualizaciones de firmware y detectar cambios no autorizados.</li>
+<li>Habilitar Secure Boot: Activar la función Secure Boot para asegurarse de que solo se ejecuten sistemas operativos y controladores firmados.</li>
+<li>Cifrado de disco: Utilizar cifrado de disco completo para proteger los datos almacenados en el disco duro y dificultar el acceso no autorizado a la BIOS/UEFI.</li>
+<li>Configuración segura: Deshabilitar características innecesarias en la BIOS/UEFI y configurar opciones de seguridad, como la protección de escritura.</li>
+<li>Monitoreo de la integridad: Implementar herramientas de monitoreo de la integridad del firmware para detectar cambios no autorizados en tiempo real.</li>
+<li>Seguridad física: Mantener la seguridad física de la computadora para prevenir el acceso no autorizado a la BIOS/UEFI.</li>
+<li>Contraseñas de administrador: Establecer contraseñas de administrador para acceder a la configuración de la BIOS/UEFI y cambiar la configuración.</li>
+<li>Formación y concienciación: Educar a los usuarios sobre las mejores prácticas de seguridad y la importancia de proteger la BIOS/UEFI.</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Estableciendo contraseñas" duration="2">
+        <ol type="1">
+<li>Contraseña de usuario (o power-on): Esta contraseña restringe el acceso a la configuración de la BIOS/UEFI. Los usuarios necesitan ingresar esta contraseña para realizar cambios en la configuración, como modificar la secuencia de arranque.</li>
+<li>Contraseña de administrador o supervisor: Esta contraseña proporciona un nivel más alto de seguridad. Requiere la autorización del administrador o supervisor para cambiar la configuración de la BIOS/UEFI, lo que limita aún más el acceso no autorizado y garantiza un control más estricto sobre las configuraciones críticas del sistema.</li>
+</ol>
+<h2 is-upgraded>Configuración</h2>
+<p>Si queremos configurar estas contraseñas, entraremos en la BIOS de nuestro dispositivo, presionando la tecla indicada por el fabricante durante el arranque, tras eso se nos abrirá la interfaz de la BIOS e iremos a el apartado de <em>Security</em>, como vemos tenemos ambas contraseñas sin configurar. <img alt="Descripción de la imagen" src="img/6314684ab51a8ff.jpeg"></p>
+<p>Presionaremos la tecla <em>Enter</em> en cada una y nos pedirán una contraseña y la confirmación de la misma.</p>
+<p class="image-container"><img alt="Descripción de la imagen" src="img/3f6ee6db2598cd30.jpeg"><img alt="Descripción de la imagen" src="img/b068ae014b7e74ba.jpeg"></p>
+<p>Tras la configuración, se pedirá una contraseña antes de iniciar el gestor de arranque dle sistema y antes de volver a realizar cambios sobr ela BIOS/UEFI.</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Arranque externo y orden de arranque" duration="2">
+        <p><em>Boot Options</em>, como vemos por defecto tenemos el arranque por USB activado y una orden de arranque incorrecto para nuestro propósito.</p>
+<p class="image-container"><img alt="Descripción de la imagen" src="img/fc1cd5b3c5709973.jpeg"></p>
+<p>Tras los cambios pertinentes, desactivamos el arranque por USB y limitamos los protocolos que acepta el arranque en red (aunque esté desactivado por defecto), además cambiamos el orden de arranque a uno más interesante, lo crucial es que sea el gestor de arranque la primera opción y que tanto el USB como la red queden entre las últimas opciones.</p>
+<p class="image-container"><img alt="Descripción de la imagen" src="img/39203ff750f0a50b.jpeg"></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Otras opciones de seguridad" duration="2">
+        <p>Por último tenemos las opciones Secure Boot y TMP.</p>
+<ul>
+<li>&#34;Secure Boot&#34; es una característica que asegura que solo se ejecuten sistemas operativos y controladores con firmas digitales de confianza, reduciendo el riesgo de carga de software malicioso durante el arranque.</li>
+<li>&#34;TPM&#34; (Trusted Platform Module) es un chip de hardware que proporciona funciones de seguridad, como el almacenamiento seguro de claves y la encriptación, contribuyendo a la protección de datos y la autenticación segura en el sistema.</li>
+</ul>
+<p>Secure Boot puede ser activada en la sección de <em>Boot Options</em>, simplemente necesitamos establecerla en &#34;Enabled&#34;.</p>
+<p class="image-container"><img alt="Descripción de la imagen" src="img/9a32c0b436f22318.jpeg"></p>
+<p>El TMP se activa en la sección de <em>Security</em>, como podemos ver, nuestra placa tiene el chip y está habilitado.</p>
+<p class="image-container"><img alt="Descripción de la imagen" src="img/62733088fd22172.jpeg"></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/claat-public/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/prettify.js"></script>
+  <script src="https://storage.googleapis.com/claat-public/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
