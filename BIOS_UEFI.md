@@ -54,7 +54,9 @@ Presionaremos la tecla *Enter* en cada una y nos pedirán una contraseña y la c
 Tras la configuración, se pedirá una contraseña antes de iniciar el gestor de arranque dle sistema y antes de volver a realizar cambios sobr ela BIOS/UEFI.
 ## Arranque externo y orden de arranque
 Duration: 0:02:00
+
 Configurar el orden de arranque y desactivar el arranque desde dispositivos USB y la red es importante para prevenir la ejecución no autorizada de software malicioso y garantizar que el sistema inicie desde fuentes confiables, fortaleciendo así la seguridad del sistema y protegiendo los datos críticos. COmo es obvio, solo nos interesa que se ejecute el sistema que tenemos en el disco interno deel dispositivo.
+
 Para realizar las configuraciones pertienentes, entraremos en la seción de *Boot Options*, como vemos por defecto tenemos el arranque por USB activado y una orden de arranque incorrecto para nuestro propósito.
 
 ![Descripción de la imagen](img/15.jpeg)

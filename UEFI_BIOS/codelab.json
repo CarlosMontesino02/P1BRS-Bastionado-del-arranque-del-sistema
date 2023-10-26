@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2023-10-24T23:37:41+02:00",
+  "updated": "2023-10-26T05:26:36+02:00",
   "id": "BIOS/UEFI",
   "duration": 9,
   "title": "Proyecto 1: Bastionado del arranque del sistema",
   "summary": "En este codelab quedan expuestos diferentes mecanismos de protección de BIOS/UEFI.",
-  "source": "README.md",
+  "source": "BIOS_UEFI.md",
   "theme": "",
   "status": [
     "published"
